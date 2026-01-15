@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "coolaid.disenchantCurses.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "GrindstoneScreenHandlerMixin"
+  ],
+  "refmap": "disenchant-curses-refmap.json",
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
+  }
+}

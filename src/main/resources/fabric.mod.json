@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "id": "disenchant-curses",
+  "version": "${version}",
+  "name": "Disenchant Curses",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/disenchant-curses/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "coolaid.disenchantCurses.DisenchantCurses"
+    ]
+  },
+  "mixins": [
+    "disenchant-curses.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}

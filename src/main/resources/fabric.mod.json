@@ -1,11 +1,17 @@
 {
   "schemaVersion": 1,
   "id": "disenchant-curses",
-  "version": "${version}",
+  "version": "0.1.0",
   "name": "Disenchant Curses",
-  "description": "",
-  "authors": [],
-  "contact": {},
+  "description": "Remove curses from books and gear with a grindstone as you would with any other enchant\n\n",
+  "authors": [
+    "CoolAid48"
+  ],
+  "contact": {
+    "homepage": "https://coolaid.live/",
+    "issues": "https://github.com/CoolAid48/Disenchant-Curses/issues",
+    "sources": "https://github.com/CoolAid48/Disenchant-Curses"
+  },
   "license": "MIT",
   "icon": "assets/disenchant-curses/icon.png",
   "environment": "*",
@@ -18,8 +24,17 @@
     "disenchant-curses.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=${loader_version}",
+    "fabricloader": ">=0.18.0",
     "fabric-api": "*",
-    "minecraft": "${minecraft_version}"
+    "minecraft": "~1.21.11"
+  },
+  "custom": {
+    "modmenu": {
+      "links": {
+        "modmenu.discord": "https://discord.gg/J2SGshKNah",
+        "modmenu.modrinth": "https://modrinth.com/mod/disenchant-curses"
+      },
+      "config_screen": ""
+    }
   }
 }

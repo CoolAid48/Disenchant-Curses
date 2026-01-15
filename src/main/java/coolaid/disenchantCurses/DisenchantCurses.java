@@ -1,7 +1,6 @@
 package coolaid.disenchantCurses;
 
 import net.fabricmc.api.ModInitializer;
-import net.minecraft.client.gui.screen.ingame.GrindstoneScreen;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

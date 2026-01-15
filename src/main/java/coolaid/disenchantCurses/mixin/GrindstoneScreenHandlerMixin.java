@@ -5,6 +5,7 @@ import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.registry.tag.EnchantmentTags;
 import net.minecraft.screen.GrindstoneScreenHandler;
 import net.minecraft.screen.ScreenHandler;
@@ -44,7 +45,15 @@ public abstract class GrindstoneScreenHandlerMixin extends ScreenHandler {
             builder.remove(e -> e.isIn(EnchantmentTags.CURSE));
             ItemEnchantmentsComponent newComponent = builder.build();
             EnchantmentHelper.set(output, newComponent);
-            outputSlot.setStack(output);
+
+            // Fix: If enchanted book with no enchs left → plain book
+            ItemEnchantmentsComponent finalComponent = EnchantmentHelper.getEnchantments(output);
+            if (output.isOf(Items.ENCHANTED_BOOK) && finalComponent.getEnchantmentEntries().isEmpty()) {
+                ItemStack plainBook = new ItemStack(Items.BOOK, output.getCount());
+                outputSlot.setStack(plainBook);
+            } else {
+                outputSlot.setStack(output);
+            }
         }
 
         if (extraXp > 0) {

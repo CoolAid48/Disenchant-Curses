@@ -2,8 +2,6 @@ package coolaid.disenchantCurses.mixin;
 
 import net.minecraft.component.type.ItemEnchantmentsComponent;
 import net.minecraft.enchantment.EnchantmentHelper;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.registry.tag.EnchantmentTags;
@@ -30,12 +28,11 @@ public abstract class GrindstoneScreenHandlerMixin extends ScreenHandler {
         if (output.isEmpty()) return;
 
         ItemEnchantmentsComponent component = EnchantmentHelper.getEnchantments(output);
-        int extraXp = 0;
         boolean changed = false;
 
+        // Checks if enchant is a curse
         for (var entry : component.getEnchantmentEntries()) {
             if (entry.getKey().isIn(EnchantmentTags.CURSE)) {
-                extraXp += 10 * entry.getIntValue();
                 changed = true;
             }
         }
@@ -46,7 +43,7 @@ public abstract class GrindstoneScreenHandlerMixin extends ScreenHandler {
             ItemEnchantmentsComponent newComponent = builder.build();
             EnchantmentHelper.set(output, newComponent);
 
-            // Fix: If enchanted book with no enchs left → plain book
+        // Strip enchants -> unenchanted book
             ItemEnchantmentsComponent finalComponent = EnchantmentHelper.getEnchantments(output);
             if (output.isOf(Items.ENCHANTED_BOOK) && finalComponent.getEnchantmentEntries().isEmpty()) {
                 ItemStack plainBook = new ItemStack(Items.BOOK, output.getCount());
@@ -54,13 +51,6 @@ public abstract class GrindstoneScreenHandlerMixin extends ScreenHandler {
             } else {
                 outputSlot.setStack(output);
             }
-        }
-
-        if (extraXp > 0) {
-            Slot hotbarSlot = this.slots.get(30);
-            PlayerInventory pinv = (PlayerInventory) hotbarSlot.inventory;
-            PlayerEntity player = pinv.player;
-            player.addExperience(extraXp);
         }
     }
 }

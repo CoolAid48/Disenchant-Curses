@@ -1,11 +1,14 @@
 {
   "schemaVersion": 1,
   "id": "disenchant-curses",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "name": "Disenchant Curses",
   "description": "Remove curses from books and gear with a grindstone as you would with any other enchant\n\n",
   "authors": [
     "CoolAid48"
+  ],
+  "contributors": [
+    "Mod icon by MandaLin"
   ],
   "contact": {
     "homepage": "https://coolaid.live/",

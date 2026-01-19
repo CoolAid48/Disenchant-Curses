@@ -3,9 +3,8 @@
   "package": "coolaid.disenchantCurses.mixin",
   "compatibilityLevel": "JAVA_21",
   "minVersion": "0.8",
-  "client": [
-  ],
   "mixins": [
+    "GrindstoneScreenHandlerMixin"
   ],
   "injectors": {
     "defaultRequire": 1

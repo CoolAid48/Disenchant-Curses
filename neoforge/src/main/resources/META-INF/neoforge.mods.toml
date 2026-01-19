@@ -1,32 +1,18 @@
 modLoader = "javafml"
 loaderVersion = "[2,)"
-#issueTrackerURL = ""
+issueTrackerURL = "https://github.com/CoolAid48/Disenchant-Curses/issues"
 license = "MIT"
 
 [[mods]]
-modId = "disenchant-curses"
-version = "${version}"
+modId = "disenchant_curses"
+version = "0.3.0"
 displayName = "Disenchant Curses"
 authors = "CoolAid48"
+credits = "Mod icon by MandaLin"
 description = '''
-
+Remove curses from books and gear with a grindstone as you would with any other enchant
 '''
-#logoFile = ""
-
-[[dependencies.disenchant-curses]]
-modId = "neoforge"
-type = "required"
-versionRange = "[21,)"
-ordering = "NONE"
-side = "BOTH"
-
-[[dependencies.disenchant-curses]]
-modId = "minecraft"
-type = "required"
-versionRange = "[1.21.11,)"
-ordering = "NONE"
-side = "BOTH"
-
+logoFile = "assets/disenchant-curses/icon.png"
 
 [[mixins]]
 config = "disenchant-curses.mixins.json"

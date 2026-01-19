@@ -1,0 +1,32 @@
+modLoader = "javafml"
+loaderVersion = "[2,)"
+#issueTrackerURL = ""
+license = "MIT"
+
+[[mods]]
+modId = "disenchant-curses"
+version = "${version}"
+displayName = "Disenchant Curses"
+authors = "CoolAid48"
+description = '''
+
+'''
+#logoFile = ""
+
+[[dependencies.disenchant-curses]]
+modId = "neoforge"
+type = "required"
+versionRange = "[21,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.disenchant-curses]]
+modId = "minecraft"
+type = "required"
+versionRange = "[1.21.11,)"
+ordering = "NONE"
+side = "BOTH"
+
+
+[[mixins]]
+config = "disenchant-curses.mixins.json"

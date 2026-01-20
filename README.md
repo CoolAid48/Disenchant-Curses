@@ -1,6 +1,6 @@
 # Disenchant Curses
 ![](https://img.shields.io/badge/Loader-Fabric/Quilt_%2b_NeoForge-purple?style=for-the-badge)
-![](https://img.shields.io/badge/Supports_MC_Versions-1.21.11-purple?style=for-the-badge)
+![](https://img.shields.io/badge/Supports_MC_Versions-1.21_--_1.21.11_-purple?style=for-the-badge)
 ![](https://img.shields.io/badge/Environments-Server-purple?style=for-the-badge)
 
 ### Remove curses from books and gear with a grindstone as you would with any other enchant!

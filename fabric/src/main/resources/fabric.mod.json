@@ -34,7 +34,7 @@
         "modmenu.modrinth": "https://modrinth.com/mod/disenchant-curses"
       },
       "depends": {
-        "minecraft": "~1.21.11",
+        "minecraft": "~1.21",
         "fabric-api": "*"
       }
     }

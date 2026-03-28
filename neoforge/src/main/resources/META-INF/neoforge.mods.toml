@@ -5,7 +5,7 @@ license = "MIT"
 
 [[mods]]
 modId = "disenchant_curses"
-version = "0.3.0"
+version = "0.3.1"
 displayName = "Disenchant Curses"
 authors = "CoolAid48"
 credits = "Mod icon by MandaLin"

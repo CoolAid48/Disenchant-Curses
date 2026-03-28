@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "disenchant-curses",
-  "version": "0.3.0",
+  "version": "${version}",
   "name": "Disenchant Curses",
   "description": "Remove curses from books and gear with a grindstone as you would with any other enchant",
   "authors": [
@@ -34,8 +34,7 @@
         "modmenu.modrinth": "https://modrinth.com/mod/disenchant-curses"
       },
       "depends": {
-        "minecraft": "~1.21",
-        "fabric-api": "*"
+        "minecraft": ">=1.21"
       }
     }
   }

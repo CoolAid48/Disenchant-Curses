@@ -1,6 +1,6 @@
-package coolaid.disenchantCurses.neoforge;
+package me.coolaid.disenchantCurses.neoforge;
 
-import coolaid.disenchantCurses.DisenchantCurses;
+import me.coolaid.disenchantCurses.DisenchantCurses;
 import net.neoforged.fml.common.Mod;
 
 @Mod(DisenchantCurses.MOD_ID)

@@ -1,6 +1,6 @@
-package coolaid.disenchantCurses.fabric;
+package me.coolaid.disenchantCurses.fabric;
 
-import coolaid.disenchantCurses.DisenchantCurses;
+import me.coolaid.disenchantCurses.DisenchantCurses;
 import net.fabricmc.api.ModInitializer;
 
 public final class DisenchantCursesFabric implements ModInitializer {

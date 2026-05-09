@@ -1,6 +1,6 @@
 {
   "required": true,
-  "package": "coolaid.disenchantCurses.mixin",
+  "package": "me.coolaid.disenchantCurses.mixin",
   "compatibilityLevel": "JAVA_21",
   "minVersion": "0.8",
   "mixins": [

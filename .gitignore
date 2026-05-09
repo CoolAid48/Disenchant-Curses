@@ -1,6 +1,7 @@
 # gradle
 
 .gradle/
+.gradle-codex/
 build/
 out/
 classes/
@@ -31,6 +32,7 @@ bin/
 # fabric
 
 run/
+.architectury-transformer/
 
 # java
 

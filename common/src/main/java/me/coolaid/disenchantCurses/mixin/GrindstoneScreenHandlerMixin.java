@@ -1,4 +1,4 @@
-package coolaid.disenchantCurses.mixin;
+package me.coolaid.disenchantCurses.mixin;
 
 import net.minecraft.tags.EnchantmentTags;
 import net.minecraft.world.inventory.AbstractContainerMenu;
@@ -8,7 +8,6 @@ import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
-import net.minecraft.world.item.enchantment.ItemEnchantments;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -27,26 +26,11 @@ public abstract class GrindstoneScreenHandlerMixin extends AbstractContainerMenu
         ItemStack output = outputSlot.getItem().copy();
         if (output.isEmpty()) return;
 
-        ItemEnchantments component = EnchantmentHelper.getEnchantmentsForCrafting(output);
-        boolean changed = false;
-
-        // Checks if enchant is a curse
-        for (var entry : component.entrySet()) {
-            if (entry.getKey().is(EnchantmentTags.CURSE)) {
-                changed = true;
-            }
-        }
-
-        if (changed) {
-            ItemEnchantments.Mutable builder = new ItemEnchantments.Mutable(component);
-            builder.removeIf(holder -> holder.is(EnchantmentTags.CURSE));
-
-            ItemEnchantments newComponent = builder.toImmutable();
-            EnchantmentHelper.setEnchantments(output, newComponent);
+        if (EnchantmentHelper.hasAnyEnchantments(output)) {
+            EnchantmentHelper.updateEnchantments(output, enchantments -> enchantments.removeIf(holder -> holder.is(EnchantmentTags.CURSE)));
 
             // Strip enchants -> unenchanted book
-            ItemEnchantments finalComponent = EnchantmentHelper.getEnchantmentsForCrafting(output);
-            if (output.is(Items.ENCHANTED_BOOK) && finalComponent.isEmpty()) {
+            if (output.is(Items.ENCHANTED_BOOK) && !EnchantmentHelper.hasAnyEnchantments(output)) {
                 ItemStack plainBook = new ItemStack(Items.BOOK, output.getCount());
                 outputSlot.set(plainBook);
             } else {

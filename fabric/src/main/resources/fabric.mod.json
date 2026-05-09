@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "id": "disenchant-curses",
+  "id": "disenchant_curses",
   "version": "${version}",
   "name": "Disenchant Curses",
   "description": "Remove curses from books and gear with a grindstone as you would with any other enchant",
@@ -20,7 +20,7 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "coolaid.disenchantCurses.fabric.DisenchantCursesFabric"
+      "me.coolaid.disenchantCurses.fabric.DisenchantCursesFabric"
     ]
   },
   "mixins": [

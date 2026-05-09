@@ -1,4 +1,4 @@
-package coolaid.disenchantCurses.mixin;
+package me.coolaid.disenchantCurses.mixin;
 
 import net.minecraft.core.Holder;
 import net.minecraft.tags.EnchantmentTags;

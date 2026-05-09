@@ -1,0 +1,18 @@
+modLoader = "javafml"
+loaderVersion = "[2,)"
+issueTrackerURL = "https://github.com/CoolAid48/Disenchant-Curses/issues"
+license = "MIT"
+
+[[mods]]
+modId = "disenchant-curses"
+version = "${version}"
+displayName = "Disenchant Curses"
+authors = "CoolAid48"
+credits = "Mod icon by MandaLin"
+description = '''
+Remove curses from books and gear with a grindstone as you would with any other enchant
+'''
+logoFile = "assets/disenchant-curses/icon.png"
+
+[[mixins]]
+config = "disenchant-curses.mixins.json"

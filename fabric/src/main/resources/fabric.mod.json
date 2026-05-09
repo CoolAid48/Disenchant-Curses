@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "id": "disenchant-curses",
-  "version": "0.2.0",
+  "version": "${version}",
   "name": "Disenchant Curses",
-  "description": "Remove curses from books and gear with a grindstone as you would with any other enchant\n\n",
+  "description": "Remove curses from books and gear with a grindstone as you would with any other enchant",
   "authors": [
     "CoolAid48"
   ],
@@ -11,7 +11,7 @@
     "Mod icon by MandaLin"
   ],
   "contact": {
-    "homepage": "https://coolaid.live/",
+    "homepage": "https://coolaid.live/docs/disenchant-curses",
     "issues": "https://github.com/CoolAid48/Disenchant-Curses/issues",
     "sources": "https://github.com/CoolAid48/Disenchant-Curses"
   },
@@ -20,24 +20,24 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "coolaid.disenchantCurses.DisenchantCurses"
+      "coolaid.disenchantCurses.fabric.DisenchantCursesFabric"
     ]
   },
   "mixins": [
     "disenchant-curses.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.18.0",
-    "fabric-api": "*",
-    "minecraft": "~1.21.11"
+    "minecraft": "~1.21",
+    "fabricloader": ">=0.17.3",
+    "fabric-api": "*"
   },
   "custom": {
     "modmenu": {
       "links": {
+        "modmenu.donate": "https://ko-fi.com/coolaid48",
         "modmenu.discord": "https://discord.gg/J2SGshKNah",
         "modmenu.modrinth": "https://modrinth.com/mod/disenchant-curses"
-      },
-      "config_screen": ""
+      }
     }
   }
 }

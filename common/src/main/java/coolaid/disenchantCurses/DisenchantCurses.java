@@ -1,16 +1,14 @@
 package coolaid.disenchantCurses;
 
-import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class DisenchantCurses implements ModInitializer {
+public final class DisenchantCurses {
 
-    public static final String MOD_ID = "DisenchantCurses";
+    public static final String MOD_ID = "disenchant-curses";
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
-    @Override
-    public void onInitialize() {
+    public static void init() {
         LOGGER.info("Initializing " + MOD_ID);
     }
 }

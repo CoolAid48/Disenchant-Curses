@@ -1,15 +1,13 @@
 {
   "required": true,
-  "minVersion": "0.8",
   "package": "coolaid.disenchantCurses.mixin",
   "compatibilityLevel": "JAVA_21",
+  "minVersion": "0.8",
   "mixins": [
-    "GrindstoneScreenHandlerMixin"
+    "GrindstoneScreenHandlerMixin",
+    "GrindstoneResultSlotMixin"
   ],
   "injectors": {
     "defaultRequire": 1
-  },
-  "overwrites": {
-    "requireAnnotations": true
   }
 }

@@ -4,8 +4,8 @@ issueTrackerURL = "https://github.com/CoolAid48/Disenchant-Curses/issues"
 license = "MIT"
 
 [[mods]]
-modId = "disenchant_curses"
-version = "0.3.1"
+modId = "disenchant-curses"
+version = "${version}"
 displayName = "Disenchant Curses"
 authors = "CoolAid48"
 credits = "Mod icon by MandaLin"

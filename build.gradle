@@ -1,6 +1,7 @@
 plugins {
-    id "architectury-plugin" version "3.5-SNAPSHOT"
-    id "dev.architectury.loom-no-remap" version "1.14-SNAPSHOT" apply false
+    id 'dev.architectury.loom' version '1.13-SNAPSHOT' apply false
+    id 'architectury-plugin' version '3.4-SNAPSHOT'
+    id 'com.github.johnrengelman.shadow' version '8.1.1' apply false
 }
 
 architectury {
@@ -13,7 +14,7 @@ allprojects {
 }
 
 subprojects {
-    apply plugin: "dev.architectury.loom-no-remap"
+    apply plugin: 'dev.architectury.loom'
     apply plugin: 'architectury-plugin'
     apply plugin: 'maven-publish'
 
@@ -32,9 +33,14 @@ subprojects {
 
     dependencies {
         minecraft "net.minecraft:minecraft:$rootProject.minecraft_version"
+        mappings loom.officialMojangMappings()
     }
 
     java {
+        toolchain {
+            languageVersion = JavaLanguageVersion.of(21)
+        }
+
         // Loom will automatically attach sourcesJar to a RemapSourcesJar task and to the "build" task
         // if it is present.
         // If you remove this line, sources will not be generated.
@@ -45,7 +51,14 @@ subprojects {
     }
 
     tasks.withType(JavaCompile).configureEach {
-        it.options.release = 25
+        it.options.release = 21
+    }
+
+    tasks.withType(JavaExec).configureEach {
+        def java21Launcher = javaToolchains.launcherFor {
+            languageVersion = JavaLanguageVersion.of(21)
+        }
+        executable = java21Launcher.get().executablePath.asFile.absolutePath
     }
 
     // Configure Maven publishing.

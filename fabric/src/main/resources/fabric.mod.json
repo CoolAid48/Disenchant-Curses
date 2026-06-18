@@ -11,7 +11,7 @@
     "Mod icon by MandaLin"
   ],
   "contact": {
-    "homepage": "https://coolaid.live/docs/disenchant-curses",
+    "homepage": "https://coolaid.live/",
     "issues": "https://github.com/CoolAid48/Disenchant-Curses/issues",
     "sources": "https://github.com/CoolAid48/Disenchant-Curses"
   },
@@ -27,7 +27,7 @@
     "disenchant-curses.mixins.json"
   ],
   "depends": {
-    "minecraft": "~26.1",
+    "minecraft": "~26.2",
     "fabricloader": ">=0.18.4",
     "fabric-api": "*"
   },
